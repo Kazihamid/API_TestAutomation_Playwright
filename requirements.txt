@@ -1,0 +1,6 @@
+playwright
+pytest
+pytest-playwright
+python-dotenv
+pytest-order>=1.2.0
+allure-pytest>=2.13.0

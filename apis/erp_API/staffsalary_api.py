@@ -1,5 +1,3 @@
-import os
-
 from apis.base_api import BaseAPI
 from config.config import BASE_URL,API_KEY,API_NAME
 

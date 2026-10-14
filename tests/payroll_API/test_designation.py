@@ -1,6 +1,6 @@
 import pytest, allure
 from playwright.sync_api import sync_playwright
-from apis.department_api import DepartmentAPI
+from apis.payroll_API.department_api import DepartmentAPI
 from apis.payroll_API.designation_api import DesignationAPI
 from utils.auth import get_bearer_token
 

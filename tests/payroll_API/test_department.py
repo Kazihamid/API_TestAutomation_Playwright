@@ -1,6 +1,6 @@
 import pytest, allure
 from playwright.sync_api import sync_playwright
-from apis.department_api import DepartmentAPI
+from apis.payroll_API.department_api import DepartmentAPI
 from utils.auth import get_bearer_token
 
 @pytest.mark.order(2)

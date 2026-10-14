@@ -1,4 +1,4 @@
-from apis.token_api import TokenAPI
+from apis.payroll_API.token_api import TokenAPI
 
 
 def get_bearer_token(request_context):

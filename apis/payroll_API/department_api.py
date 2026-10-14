@@ -3,7 +3,7 @@ from config.config import PAYROLL_BASE_URL
 
 
 class DepartmentAPI(BaseAPI):
-    """Test Script 2: Create or Update Department/Programme"""
+    """Test Script 2: create_update_department_programme"""
 
     def create_or_update_department(self, token, payload):
         headers = {

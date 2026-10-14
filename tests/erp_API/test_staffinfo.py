@@ -1,6 +1,7 @@
 import allure
 import pytest
 from apis.erp_API.staffinfo_api import StaffInfoAPI
+from validators.response_validator import assert_status
 
 
 @allure.feature("ERP API")
@@ -9,4 +10,4 @@ from apis.erp_API.staffinfo_api import StaffInfoAPI
 def test_get_staff_information(api_request):
     response = StaffInfoAPI(api_request).get_staff_info()
 
-    assert response.status == 200, f"Expected 200, got {response.status}: {response.text()}"
+    assert_status(response)

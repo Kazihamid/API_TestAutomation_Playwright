@@ -1,5 +1,6 @@
 import allure
 from apis.payroll_API.department_api import DepartmentAPI
+from validators.response_validator import assert_payroll_success
 
 
 @allure.feature("Payroll API")
@@ -13,4 +14,5 @@ def test_create_or_update_department(api_request, payroll_token):
 
     response = DepartmentAPI(api_request).create_or_update_department(payroll_token, payload)
 
-    assert response.status == 200, f"Expected 200, got {response.status}: {response.text()}"
+    body = assert_payroll_success(response)
+    assert "Department" in body["message"], f"Unexpected message: {body}"

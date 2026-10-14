@@ -1,5 +1,6 @@
 import allure
 from apis.payroll_API.token_api import TokenAPI
+from validators.response_validator import assert_status
 
 
 @allure.feature("Payroll API")
@@ -7,7 +8,7 @@ from apis.payroll_API.token_api import TokenAPI
 def test_token_generation(api_request):
     response = TokenAPI(api_request).generate_token()
 
-    assert response.status == 200, f"Expected 200, got {response.status}: {response.text()}"
-
+    assert_status(response)
     body = response.json()
-    assert "access_token" in body, f"'access_token' missing in response: {body}"
+    assert body.get("access_token"), f"'access_token' missing or empty in response: {body}"
+    assert body.get("token_type", "").lower() == "bearer", f"Unexpected token_type: {body.get('token_type')}"

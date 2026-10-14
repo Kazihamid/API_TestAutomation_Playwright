@@ -2,6 +2,13 @@ class BaseAPI:
     def __init__(self, request):
         self.request = request
 
+    @staticmethod
+    def bearer_headers(token):
+        return {
+            "Authorization": f"Bearer {token}",
+            "Content-Type": "application/json",
+        }
+
     def get(self, endpoint, headers=None, params=None):
         return self.request.get(endpoint, headers=headers, params=params)
 

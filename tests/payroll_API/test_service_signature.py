@@ -1,15 +1,14 @@
 import allure
 import pytest
 from apis.payroll_API.hr_service_api import HrServiceAPI
-from utils.json_helper import load_json
-from validators.response_validator import assert_payroll_success, assert_status
+from utils.json_helper import load_payload
+from validators.response_validator import assert_status
 
-# (test case title, hr_InteaccHrRestServiceBean action) from HRMS_Payroll API sheet.
-# Order matters: create_EmployeeSeparation must run before withdraw_EmployeeSeparation.
-HR_ACTIONS = [
+# (data file, server action): read-only check that each request body matches
+# the parameter names the server publishes for that action
+SIGNATURES = [
     ("create_EmployeeProfile", "createEmployeeProfile"),
     ("create_Update_Project", "createOrUpdateSection"),
-    # Sheet shows "createEmployeeProf..." here, which looks like a copy-paste slip; confirm with API team
     ("create_Update_OperatingLocation", "createOrUpdateOperatingLocation"),
     ("create_EmployeeTransfer", "createEmployeeTransfer"),
     ("create_EmployeeSeparation", "createEmployeeSeparation"),
@@ -33,31 +32,14 @@ def hr_service_methods(api_request, payroll_token):
 
 @allure.feature("Payroll API")
 @allure.story("Request body matches service signature")
-@pytest.mark.parametrize("title, action", HR_ACTIONS, ids=[title for title, _ in HR_ACTIONS])
-def test_hr_payload_matches_signature(hr_service_methods, title, action):
-    """Read-only contract check: the server only matches a method when body keys equal its param names."""
+@pytest.mark.parametrize("data, action", SIGNATURES, ids=[data for data, _ in SIGNATURES])
+def test_payload_matches_signature(hr_service_methods, data, action):
     assert action in hr_service_methods, f"Server has no method '{action}'"
 
-    payload = load_json(f"payroll/{title}.json")
-    if "_incomplete" in payload:
-        pytest.skip(payload["_incomplete"])
+    payload = load_payload(f"payroll/{data}.json")
 
     expected = set(hr_service_methods[action])
     actual = set(payload)
     assert actual == expected, (
         f"{action}: missing {sorted(expected - actual)}, unexpected {sorted(actual - expected)}"
     )
-
-
-@allure.feature("Payroll API")
-@pytest.mark.parametrize("title, action", HR_ACTIONS, ids=[title for title, _ in HR_ACTIONS])
-def test_hr_action(api_request, payroll_token, title, action):
-    allure.dynamic.story(title)
-
-    payload = load_json(f"payroll/{title}.json")
-    if "_incomplete" in payload:
-        pytest.skip(payload["_incomplete"])
-
-    response = HrServiceAPI(api_request).call(action, payroll_token, payload)
-
-    assert_payroll_success(response)

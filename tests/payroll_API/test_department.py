@@ -1,6 +1,6 @@
 import allure
 import pytest
-from apis.payroll_API.department_api import DepartmentAPI
+from apis.payroll_API.create_Update_Department_API import DepartmentAPI
 from utils.json_helper import load_payload
 from validators.response_validator import assert_payroll_success
 

@@ -1,6 +1,6 @@
 import allure
 import pytest
-from apis.payroll_API.designation_api import DesignationAPI
+from apis.payroll_API.create_Update_Designation_API import DesignationAPI
 from utils.json_helper import load_payload
 from validators.response_validator import assert_payroll_success
 

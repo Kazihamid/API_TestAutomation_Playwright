@@ -7,6 +7,8 @@ from validators.response_validator import assert_status
 # (data file, server action): read-only check that each request body matches
 # the parameter names the server publishes for that action
 SIGNATURES = [
+    ("create_Update_Department", "createOrUpdateDepartment"),
+    ("create_Update_Designation", "createOrUpdateDesignation"),
     ("create_EmployeeProfile", "createEmployeeProfile"),
     ("create_Update_Project", "createOrUpdateSection"),
     ("create_Update_OperatingLocation", "createOrUpdateOperatingLocation"),

@@ -1,9 +1,11 @@
 import allure
+import pytest
 from apis.payroll_API.create_LeaveApplication_API import LeaveApplicationAPI
 from utils.json_helper import load_payload
 from validators.response_validator import assert_payroll_success
 
 
+@pytest.mark.order(10)
 @allure.feature("Payroll API")
 @allure.story("Create leave application")
 def test_create_leave_application(api_request, payroll_token):

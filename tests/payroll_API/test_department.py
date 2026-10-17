@@ -1,8 +1,10 @@
 import allure
+import pytest
 from apis.payroll_API.department_api import DepartmentAPI
 from validators.response_validator import assert_payroll_success
 
 
+@pytest.mark.order(2)
 @allure.feature("Payroll API")
 @allure.story("Create or update department")
 def test_create_or_update_department(api_request, payroll_token):

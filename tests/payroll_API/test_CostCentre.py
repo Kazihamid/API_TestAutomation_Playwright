@@ -1,9 +1,11 @@
 import allure
+import pytest
 from apis.payroll_API.create_Update_CostCentre_API import CostCentreAPI
 from utils.json_helper import load_payload
 from validators.response_validator import assert_payroll_success
 
 
+@pytest.mark.order(15)
 @allure.feature("Payroll API")
 @allure.story("Create or update cost centre")
 def test_create_or_update_cost_centre(api_request, payroll_token):

@@ -1,9 +1,11 @@
 import allure
+import pytest
 from apis.payroll_API.create_WorkAwayOfficeInternationalVisit_API import WorkAwayOfficeInternationalVisitAPI
 from utils.json_helper import load_payload
 from validators.response_validator import assert_payroll_success
 
 
+@pytest.mark.order(9)
 @allure.feature("Payroll API")
 @allure.story("Create work away office international visit")
 def test_create_work_away_office_international_visit(api_request, payroll_token):

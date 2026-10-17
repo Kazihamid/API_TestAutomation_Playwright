@@ -1,6 +1,10 @@
 {
-  "_incomplete": "Body truncated in HRMS_Payroll API.pdf - paste full Raw-JSON from the source sheet and delete this key",
   "employeePin": "00002879",
   "docNo": "TestDocNo1",
-  "docDate": "2025-03-11"
+  "docDate": "2025-03-11",
+  "effectiveDate": "2025-05-31",
+  "suspEndDate": "2025-05-13",
+  "suspAttenType": 10,
+  "suspPayStatus": 10,
+  "note": "Test Suspension"
 }

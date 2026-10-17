@@ -11,3 +11,10 @@ class HrServiceAPI(BaseAPI):
             headers=self.bearer_headers(token),
             data=payload,
         )
+
+    def describe(self, token):
+        """Lists the service's methods and their parameter names."""
+        return self.get(
+            f"{PAYROLL_BASE_URL}rest/services/hr_InteaccHrRestServiceBean",
+            headers={"Authorization": f"Bearer {token}"},
+        )

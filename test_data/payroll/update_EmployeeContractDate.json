@@ -1,3 +1,4 @@
 {
-  "_incomplete": "Body truncated in HRMS_Payroll API.pdf - paste full Raw-JSON from the source sheet and delete this key"
+  "employeePin": "00261258",
+  "contractValidityDate": "2025-03-17"
 }

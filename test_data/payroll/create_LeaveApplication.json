@@ -1,0 +1,9 @@
+{
+  "_incomplete": "Body truncated in HRMS_Payroll API.pdf - paste full Raw-JSON from the source sheet and delete this key",
+  "employeePin": "00098520",
+  "leaveTypeCode": "05",
+  "eventDate": "",
+  "startDate": "2018-03-16",
+  "endDate": "2018-12-31",
+  "durationType": 10
+}

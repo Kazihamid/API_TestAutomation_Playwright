@@ -1,0 +1,10 @@
+{
+  "_incomplete": "Body truncated in HRMS_Payroll API.pdf - paste full Raw-JSON from the source sheet and delete this key",
+  "employeePin": "00276826",
+  "name": "APITEST",
+  "currentAddress": "",
+  "permanentAddress": "test address",
+  "deptCode": "28",
+  "jobTitle": "Programme Organizer",
+  "genderCode": "1"
+}

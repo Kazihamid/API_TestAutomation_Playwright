@@ -19,6 +19,7 @@ SIGNATURES = [
     ("update_EmployeeContractDate", "updateContractDateEmployee"),
     ("withdraw_EmployeeSeparation", "withdrawSeparation"),
     ("create_Update_CostCentre", "createOrUpdateCostCentre"),
+    ("create_EmployeeSuspension", "createEmployeeSuspension"),
 ]
 
 

@@ -1,0 +1,23 @@
+{
+  "employeePin": "00098520",
+  "leaveTypeCode": "05",
+  "eventDate": "",
+  "startDate": "2026-10-16",
+  "endDate": "2026-10-31",
+  "durationType": 10,
+  "docSentToHr": true,
+  "note": "Neuro Developmental Disability (NDD) center is a new initiative of BEP. The Certificate in Education for Special Education Course will support to develop staff on NDD.",
+  "eventEndDate": null,
+  "postEventStartDate": null,
+  "postEventEndDate": null,
+  "totalDays": 16,
+  "workingDays": null,
+  "calendarDays": 16,
+  "eventDays": null,
+  "postEventDays": null,
+  "documents": null,
+  "custom1": null,
+  "custom2FamilyMemberId": null,
+  "docSentToHrDate": null,
+  "refApplicationNo": null
+}

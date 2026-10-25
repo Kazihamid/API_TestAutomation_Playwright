@@ -1,0 +1,10 @@
+{
+  "employeePin": "00002879",
+  "docNo": "TestDocNo1",
+  "docDate": "2025-03-11",
+  "effectiveDate": "2025-05-31",
+  "suspEndDate": "2025-05-13",
+  "suspAttenType": 10,
+  "suspPayStatus": 10,
+  "note": "Test Suspension"
+}
